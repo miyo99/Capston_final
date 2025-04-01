@@ -1,0 +1,7 @@
+path: C:/Users/corge/flask/DashBoard_test/dataset
+
+train: C:/Users/corge/flask/DashBoard_test/dataset/images/train
+val: C:/Users/corge/flask/DashBoard_test/dataset/images/val
+
+names:
+  0: crack

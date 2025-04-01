@@ -1,0 +1,59 @@
+/* 전체 레이아웃 */
+.main-container {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  gap: 30px;
+}
+
+.left-box {
+  width: 45%;
+  max-height: 600px;
+  overflow-y: scroll;
+}
+
+.image-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.card {
+  background: #df9494b9;
+  padding: 12px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  width: 500px;
+}
+
+.right-box {
+  background: #000;
+  width: 50%;
+  height: 500px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.description {
+  margin-top: 20px;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* 카드 이미지와 위험도 정보 */
+.card img {
+  width: 100%;
+  border-radius: 12px;
+}
+
+.info {
+  margin-top: 10px;
+}
+
+/* 수평 정렬 및 분포도 그래프 */
+canvas {
+  width: 80%;
+  height: 80%;
+}

@@ -1,0 +1,25 @@
+# Python 환경
+__pycache__/
+*.pyc
+*.pyo
+*.log
+
+# 가상환경
+venv/
+.env
+
+# YOLO 모델, 실험 결과
+*.pt
+runs/
+
+# 데이터셋 캐시 (YOLO 자동 생성)
+*.cache
+*.jpg.cache
+*.png.cache
+
+# OS/에디터 관련 불필요 파일
+.DS_Store
+.vscode/
+
+# datasets 내부 라벨 캐시
+datasets/**/*.cache
