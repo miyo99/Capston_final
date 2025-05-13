@@ -1,5 +1,7 @@
 from flask import Flask, render_template, send_from_directory
-from db import fetch_risk_data
+from db.db_insert import fetch_risk_data
+from collections import Counter
+# from pyngrok import ngrok
 import os
 import re
 
@@ -25,15 +27,28 @@ def home():
     result_images = get_files(RESULT_FOLDER)
     danger_levels = fetch_risk_data()
 
-    # 위험도 높은 순으로 정렬 (level: 5 → 1)
+    # 위험도 높은 순으로 정렬
     result_images.sort(key=lambda img: danger_levels.get(img, {}).get("level", 0), reverse=True)
 
-    return render_template("index.html", result_images=result_images, danger_levels=danger_levels)
+    # ✅ 위험도 분포 집계
+    levels = [danger_levels[img]["level"] for img in result_images if img in danger_levels]
+    level_counts = Counter(levels)
+    
+    # Chart.js에 넘길 순서 맞춰 정리
+    risk_distribution = [level_counts.get(i, 0) for i in range(1, 6)]  # 1~5 위험도
 
+    return render_template(
+        "index.html",
+        result_images=result_images,
+        danger_levels=danger_levels,
+        risk_distribution=risk_distribution
+    )
+    
 # 업로드된 이미지 제공
 @app.route("/results/<filename>")
 def uploaded_file(filename):
     return send_from_directory(RESULT_FOLDER, filename)
 
 if __name__ == "__main__":
+    
     app.run(debug=True)
