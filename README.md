@@ -20,7 +20,6 @@ RC카를 활용한 균열(크랙) 탐지 및 위험도 분석 시스템
 | PostgreSQL | VSCode | Flask | FastAPI |
 |------------|--------|-------|---------|
 | <img src="postgresql.png" width="80"/> | <img src="vc.png" width="80"/> | <img src="파이썬플라스크.png" width="80"/> | <img src="fastapi.png" width="100"/> |
-![화면 캡처 2025-05-28 173850](https://github.com/user-attachments/assets/f3ea306d-325e-422f-8dac-f74442be53f6)
 
 ---
 
